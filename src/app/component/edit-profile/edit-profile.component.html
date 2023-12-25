@@ -1,0 +1,51 @@
+<br>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Nom</mat-label>
+      <input matInput [(ngModel)]="editedPerson.nom" placeholder="Placeholder">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Prenom</mat-label>
+      <input matInput [(ngModel)]="editedPerson.prenom" placeholder="Placeholder">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+  
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Date de naissance</mat-label>
+      <input matInput [(ngModel)]="editedPerson.naissance" placeholder="Placeholder">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+  
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Classe</mat-label>
+      <input matInput [(ngModel)]="editedPerson.classe" placeholder="Placeholder">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+  
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Specialité</mat-label>
+      <input matInput [(ngModel)]="editedPerson.specialite" placeholder="Placeholder">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+  
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>N° Tel</mat-label>
+      <input matInput [(ngModel)]="editedPerson.phone" placeholder="Placeholder">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+  <button mat-raised-button color="primary" (click)="saveChanges()">Save</button>
+
+
+  

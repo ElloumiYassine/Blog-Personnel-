@@ -1,0 +1,59 @@
+<h2>Ajouter une nouvelle cometance</h2>
+<div class="example-input-wrapper">
+    <label for="duration">Animation duration:</label>
+    <input id="duration" value="200" type="number" min="0" step="100" #duration>
+  </div>
+  
+  <mat-vertical-stepper [linear]="false" #stepper [animationDuration]="duration.value">
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Entrer le nouveau domaine</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Suivant</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Entrer la technologie</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="" formControlName="secondCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Precedent</button>
+          <button mat-button matStepperNext>Suivant</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <ng-template matStepLabel>Ou tu as apris cette competance</ng-template>
+          <mat-selection-list #shoes [multiple]="false">
+            <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe">
+              {{shoe}}
+            </mat-list-option>
+          </mat-selection-list>
+          <p>
+            Option selectionée: {{shoes.selectedOptions.hasValue() ? shoes.selectedOptions.selected[0].value : 'None'}}
+          </p>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext (click)="createSkills(shoes.selectedOptions.selected[0].value)">Next</button>
+          </div>
+        </form>
+      </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      You are now done.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
+  
+  
+  

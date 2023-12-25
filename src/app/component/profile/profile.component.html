@@ -1,0 +1,44 @@
+<br>
+<mat-grid-list cols="4" rowHeight="1:1">
+    <mat-grid-tile ><img src="../../../assets/316170649_526561459368890_3560947978242349636_n-removebg-preview.png" alt="" style="width: 90%;"></mat-grid-tile>
+    <mat-grid-tile>
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th> : {{pers.nom}}</th>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <th>        : {{pers.prenom}}</th>
+            </tr>
+            <tr>
+                <th>Date de naissance</th>
+                <th>        : {{pers.naissance}}</th>
+            </tr>
+            
+        </table>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <table>
+
+            <tr>
+                <th>Classe</th>
+                <th>      : {{pers.classe}}</th>
+            </tr>
+            <tr>
+                <th>Specialité</th>
+                <th>         : {{pers.specialite}}</th>
+            </tr>
+            <tr>
+                <th>N° Tel : </th>
+                <th>        : {{pers.phone}}</th>
+            </tr>
+        </table>
+    </mat-grid-tile>
+    <mat-grid-tile>    <button mat-raised-button color="primary" (click)="toggleEditForm()" ><mat-icon>settings</mat-icon> Modifier </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <app-edit-profile  *ngIf="showEditForm"></app-edit-profile>
+  
+  
